@@ -1,25 +1,25 @@
 from datetime import timedelta
 from plum import dispatch
 from typing import Type, Any
-import isodate
+from zoneinfo import ZoneInfo
 import serde
 
 
 class Serializer:
     @dispatch
-    def serialize(self, value: timedelta) -> Any:
-        return isodate.duration_isoformat(value)
+    def serialize(self, value: ZoneInfo) -> Any:
+        return value.key
 
 
 class Deserializer:
     @dispatch
-    def deserialize(self, cls: Type[timedelta], value: Any) -> timedelta:
-        return isodate.parse_duration(value)
+    def deserialize(self, cls: Type[ZoneInfo], value: Any) -> ZoneInfo:
+        return ZoneInfo(value)
 
 
 def init() -> None:
     """
-    Initialize pyserde-timedelta extenstion.
+    Initialize pyserde-zoneinfo extension.
     Be sure to call this function before declaring pyserde class.
     """
     serde.add_serializer(Serializer())

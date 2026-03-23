@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "pyserde-timedelta"
-version = "0.1.1"
-description = "pyserde extension for (de)serializing timedelta"
-authors = ["yukinarit <yukinarit84@gmail.com>"]
+name = "pyserde-zoneinfo"
+version = "0.0.1"
+description = "pyserde extension for (de)serializing zoneinfo.ZoneInfo"
+authors = ["davetapley <dave@jefuller.com>"]
 license = "MIT"
 readme = "README.md"
-repository = "https://github.com/yukinarit/pyserde-timedelta"
-homepage = "https://github.com/yukinarit/pyserde-timedelta"
-packages = [{include = "serde_timedelta"}]
+repository = "https://github.com/jefuller/pyserde-zoneinfo"
+homepage = "https://github.com/jefuller/pyserde-zoneinfo"
+packages = [{include = "serde_zoneinfo"}]
 classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
@@ -23,7 +23,6 @@ classifiers=[
 
 [tool.poetry.dependencies]
 python = "^3.8"
-isodate = "^0.6"
 plum-dispatch = "^2.2"
 pyserde = ">=0.13"
 
